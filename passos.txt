@@ -1,0 +1,13 @@
+como fazer com o git bash
+
+abra o terminal o do git, em seguida cd \ (windows) cd ~ (linux)
+depois git clone <url> e depois abrir no vs code
+
+comandos 
+
+npx express-generator --no-view <nome projeto>
+em seguida cd <nome projeto> e npm install 
+npm i mongose
+
+criar arquivo na raiz .gitignore
+criar arquivo na pasta models das coleções  
