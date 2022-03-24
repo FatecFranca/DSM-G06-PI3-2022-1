@@ -6,7 +6,7 @@ depois git clone <url> e depois abrir no vs code
 comandos 
 
 npx express-generator --no-view <nome projeto>
-em seguida cd <nome projeto> e npm install 
+em seguida cd <nome projeto> e npm install depois
 npm i mongose
 
 criar arquivo na raiz .gitignore
