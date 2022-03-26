@@ -8,6 +8,9 @@ comandos
 npx express-generator --no-view <nome projeto>
 em seguida cd <nome projeto> e npm install depois
 npm i mongose
+npm install dotenv -- arquivo a parte para colocar senha, nao sera commitado para o github
 
 criar arquivo na raiz .gitignore
-criar arquivo na pasta models das coleções  
+criar arquivo na pasta models das coleções 
+
+criar arquivo .env.sample
