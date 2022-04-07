@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 module.exports = function() {
     const schema = mongoose.Schema({
         datetime: {
-            type: Data,
+            type: Date,
             required: true,
             default: Date.now()
         },
