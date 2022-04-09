@@ -14,3 +14,9 @@ criar arquivo na raiz .gitignore
 criar arquivo na pasta models das coleções 
 
 criar arquivo .env.sample
+
+convenção para nomes compostos em js:
+QuestionGroup -> CamelCase -> Model
+question_group -> sublinhado -> rotas e controller
+/question-group -> hífen -> nome da rota no app.js
+

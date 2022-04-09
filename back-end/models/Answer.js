@@ -7,7 +7,7 @@ module.exports = function() {
             required: true,
             ref: 'Assessment'
         },
-        definition: {
+        question: {
             type: mongoose.ObjectId,
             required: true,
             ref: 'Question'
@@ -34,6 +34,8 @@ module.exports = function() {
            default: Date.now()
        }
     })
+
+    schema.index({assessment: 1, question: 1}, {unique: true})
 
     return mongoose.model('Answer', schema, 'answers')
 }
