@@ -22,7 +22,8 @@ module.exports = function() {
 
         password_hash: {
             type: String,
-            required: true
+            required: true,
+            select: false // Campo não aparece em consulta
         },
 
         date_registered: {

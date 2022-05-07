@@ -20,7 +20,7 @@ controller.create = async(req, res) => {
 // Função que devolve uma listagem das entradas de glossário já inseridas
 controller.retrieve = async (req, res) => {
     try{
-        const result = await Assessment.find().populate('user')
+        const result = await Assessment.find({user: req.userId}).populate('user')
         // HTTP 200: OK é implícito aqui 
         res.send(result)
     }
@@ -35,7 +35,7 @@ controller.retrieve = async (req, res) => {
 controller.retrieveOne = async (req, res) => {
     try{
         const id = req.params.id
-        const result = await Assessment.findById(id)
+        const result = await Assessment.findOne({ _id: id, user: req.authenticatedId})
         
         // Se tivermos um resultado, retornamos status HTTP 200
         if(result) res.send(result)

@@ -16,7 +16,10 @@ module.exports = (req, res, next) => {
         // O token está ok 
         req.userId = decoded.id
 
-        next()
+        // Salva o id na request para uso posterior
+        req.authenticateId = decoded.id
+
+        next() // Chama a próxima função de middleware
 
     })
 
