@@ -1,0 +1,73 @@
+.Cartoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.Cartao {
+    border: 4px solid;
+    overflow: hidden;
+    justify-content: left;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 75%;
+    border-radius: 10px;
+    height: 500px;
+}
+
+.Conteudo {
+    flex-grow: 1;
+    background-color:  #c2c1ff;
+    color: black;
+    padding: 20px;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+input {
+    border-radius: 10px;
+    height: 30px;
+    border: 3px solid black;
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+#Termos {
+    width: 15px;
+    height: 15px;
+}
+ input :last-child {
+     text-align: center;
+ }
+
+h1{
+    text-align: center;
+}
+
+button {
+    border-radius: 50px;
+    border: 1px solid black;
+    background-color: silver;
+    width: 150px;
+    height: 40px;
+}
+
+.Conteudo label {
+    text-align: left;
+}
+
+label {
+    display: block;
+}
+
+label :last-child{
+    display: inline-block;
+}
+
+#Checkbox{
+    display: flex;
+}

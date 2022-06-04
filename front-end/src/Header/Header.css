@@ -1,0 +1,92 @@
+.menu {
+    height: 9vh;
+    background-color: rgb(129, 129, 129);
+    font-size: 16px;
+    border-bottom: 4px solid rgb(43, 43, 43);
+    padding-right: 40px;
+    display: grid;
+    align-items: center;
+}
+
+.navMenu ul {
+    display: flex;
+    float: right;
+    align-items: center;
+    margin: 0;
+}
+
+.menu ul {
+    text-align: right;
+}
+
+ul li {
+    display: inline-flex;
+    float: left;
+}
+
+.navMenu ul li a {
+    padding-left: 2vw;
+    text-decoration: none;
+    color: rgb(17, 17, 17);
+}
+
+.navMenu ul li a:hover {
+    color: blue;
+    transition: 0.5s;
+}
+
+#iconeperfil {
+    width: 36px;
+    height: 36px;
+    margin-left: 15px;
+}
+
+.bm-burger-button {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    margin-left: 15px;
+}
+
+.bm-burger-bars {
+    background-color: rgb(0, 0, 0);
+    margin: 0;
+}
+
+.bm-burger-bars-hover {
+    background-color: #0400ff;
+    transition: 0.5s;
+}
+
+.bm-cross {
+    background: #fff;
+}
+
+.bm-menu {
+    background-color: black;
+    font-size: 1.15em;
+    border: 3px solid red;
+    border-left: none;
+    height: 100%;
+}
+
+.bm-item {
+    padding: 15px 0px 15px 0px;
+    width: 100%;
+    background-color: #0400ff;
+    text-align: center;
+    border-bottom: 2px solid green;
+    color: white;
+    text-decoration: none;
+}
+
+.bm-item:hover {
+    background-color: red;
+    transition: 0.5s;
+    color: black;
+}
+
+.navMenu {
+    align-items: center;
+    vertical-align: middle;
+}
