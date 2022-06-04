@@ -29,7 +29,13 @@ class Header extends React.Component {
 
                         <li><Link to="/"> Sobre </Link></li>
                         <li><Link to="/cursos"> Quem somos </Link></li>
-                        <img id='iconeperfil' alt='' src={I} />
+                        <div id="menu-contraido"></div>
+                        <Menu customBurgerIcon={ <img id='iconeperfil' alt='' src={I} /> }>
+                            <Link to="/">Home</Link>
+                            <Link to="/cadastrar">Cadastrar</Link>
+                            <Link to="/entrar">Entrar</Link>              
+                            <Link to="/checklist">Checklist</Link>
+                        </Menu>
                     </ul>
                 </nav>
             </div>
