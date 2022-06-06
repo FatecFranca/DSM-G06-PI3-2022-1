@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-// Importa o controller correspondente 
+// Importa o controller correspondente
 const controller = require('../controllers/question_group')
 
 router.post('/', controller.create)
@@ -10,4 +10,4 @@ router.get('/:id', controller.retrieveOne)
 router.put('/', controller.update)
 router.delete('/', controller.delete)
 
-module.exports = router 
+module.exports = router

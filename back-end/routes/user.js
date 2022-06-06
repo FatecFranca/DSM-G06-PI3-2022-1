@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const verifyToken = require('../lib/verify_token')
 
-// Importa o controller correspondente 
+// Importa o controller correspondente
 const controller = require('../controllers/user')
 
 router.post('/', controller.create)
