@@ -1,18 +1,19 @@
 .menu {
     height: 9vh;
-    background-color: rgb(129, 129, 129);
+    background-color: #fada95;
     font-size: 16px;
     border-bottom: 4px solid rgb(43, 43, 43);
     padding-right: 40px;
     display: grid;
     align-items: center;
+    display: flex;
 }
 
 .navMenu ul {
     display: flex;
-    float: right;
+    float: left;
     align-items: center;
-    margin: 0;
+    margin: 0;    
 }
 
 .menu ul {
@@ -21,32 +22,25 @@
 
 ul li {
     display: inline-flex;
-    float: left;
 }
 
 .navMenu ul li a {
-    padding-left: 2vw;
+    padding-right: 2vw;
     text-decoration: none;
     color: rgb(17, 17, 17);
+    align-items: center;
+    display: inline;
 }
 
 .navMenu ul li a:hover {
-    color: blue;
+    color: #f7f6ee;
     transition: 0.5s;
 }
 
-#iconeperfil {
-    width: 36px;
-    height: 36px;
-    margin-left: 15px;
-    cursor: pointer;
-}
-
 .bm-burger-button {
-    position: absolute;
+    position: relative;
     width: 36px;
     height: 36px;
-    margin-left: 15px;
 }
 
 .bm-burger-bars {
@@ -55,39 +49,53 @@ ul li {
 }
 
 .bm-burger-bars-hover {
-    background-color: #0400ff;
+    background-color: #2a90ab;
     transition: 0.5s;
 }
 
 .bm-cross {
-    background: #fff;
+    background-color: black;
 }
 
 .bm-menu {
-    background-color: black;
+    background-color: #2a90ab;
     font-size: 1.15em;
-    border: 3px solid red;
-    border-left: none;
-    height: 100%;
+    border: 3px solid black;
 }
 
 .bm-item {
     padding: 15px 0px 15px 0px;
     width: 100%;
-    background-color: #0400ff;
+    background-color: #2a90ab;
     text-align: center;
-    border-bottom: 2px solid green;
+    border-bottom: 2px solid #fada95;
     color: white;
     text-decoration: none;
 }
 
 .bm-item:hover {
-    background-color: red;
-    transition: 0.5s;
+    background-color: #9edded;
     color: black;
+    transition: 2s;
 }
 
 .navMenu {
     align-items: center;
-    vertical-align: middle;
+    display: block;
+    width: 100%;
+}
+
+#menu2 {
+    float: right;
+}
+
+.bm-menu-wrap{
+    top: 0;
+    right: 0;
+    margin-left: -45px;
+}
+
+.bm-overlay {
+    top: 0;
+    left: 0;
 }

@@ -18,11 +18,11 @@
 
 .Conteudo2 {
     flex-grow: 1;
-    background-color:  #c2c1ff;
+    background-color:  #fff;
     color: black;
     padding: 20px;
     display: grid;
-    text-align: center;
+    text-align: left;
     align-items: center;
     justify-content: space-around;
 }
@@ -53,9 +53,14 @@ label {
 
 #cadastre {
     color: black;
+    text-align: center;
 }
 
 #cadastre:hover{
     color: blue;
     transition: 1s;
+}
+
+#entrar {
+    text-align: center;
 }

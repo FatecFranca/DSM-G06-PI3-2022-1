@@ -1,43 +1,45 @@
 import React from 'react';
 
 //importar pacote link que é parte do react-router-dom
-import { Link } from 'react-router-dom';
 import I from '../Images/icono_perfil.png'
-import { slide as Menu } from 'react-burger-menu'
+import { stack as Menu } from 'react-burger-menu'
 
 import './Header.css';
 
 class Header extends React.Component {
-    showSettings(event) {
-        event.preventDefault();
-
-    }
 
     render() {
-        
+
         return (
+
             <div className="menu">
+                
                 <nav className="navMenu">
-                    <Menu>
-                            <Link to="/">Home</Link>
-                            <Link to="/cadastrar">Cadastrar</Link>
-                            <Link to="/entrar">Entrar</Link>              
-                            <Link to="/checklist">Checklist</Link>
-                    </Menu>
+                    <div>
+                        <ul>
+                            <Menu>
+                                <a href="/">Home</a>
+                                <a href='/cadastrar'>Cadastrar</a>
+                                <a href="/entrar">Entrar</a>
+                                <a href="/checklist">Checklist</a>
+                            </Menu>
+                        </ul>
+                            
+                        <div id="menu2">
+                            <ul>
+                                <li><a href="/"> Sobre </a></li>
+                                <li><a href="/cursos"> Quem somos </a></li>
+                                <Menu noOverlay right customBurgerIcon={<img id='iconeperfil' alt='' src={I} />}>
+                                    <a href="/">Meu Perfil</a>
+                                    <a href="/cadastrar">Cadastrar</a>
+                                    <a href="/entrar">Entrar</a>
+                                </Menu>
+                            </ul>
+                        </div>
 
-                    <ul>
-
-                        <li><Link to="/"> Sobre </Link></li>
-                        <li><Link to="/cursos"> Quem somos </Link></li>
-                        <div id="menu-contraido"></div>
-                        <Menu customBurgerIcon={ <img id='iconeperfil' alt='' src={I} /> }>
-                            <Link to="/">Home</Link>
-                            <Link to="/cadastrar">Cadastrar</Link>
-                            <Link to="/entrar">Entrar</Link>              
-                            <Link to="/checklist">Checklist</Link>
-                        </Menu>
-                    </ul>
+                    </div>
                 </nav>
+                
             </div>
 
         );

@@ -10,7 +10,6 @@ import Login from '../Entrar/Login';
 import Checklist from '../Checklist/Checklist';
 import Questoes from '../Questoes/Questoes';
 
-
 function App() {
   return (
     <div>

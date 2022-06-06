@@ -1,10 +1,15 @@
-.Cartoes3 {
+#Checklist {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+#Cartoes3 {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    text-align: center;
-    margin: 50px 50px 50px 50px;
+    margin: 50px 10px 50px 10px;
     position: relative;
     align-self: center;
 }
@@ -20,12 +25,12 @@
     height: 230px;
 }
 
-.Conteudo {
-    background-color:  #c2c1ff;
-    color: black;
+.Conteudo3 {
+    flex-grow: 1;
+    background-color:  #fff;
+    color: #2a90ab;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
     text-align: center;
     align-items: center;
     justify-content: space-around;
@@ -34,28 +39,50 @@
 
 .link {
     text-decoration: none;
-    color: black;
-    font-size: 35px;
+    color: #2a90ab;
+    font-size: 20px;
     font-weight: bolder;
     display: block;
     margin: 20px;
 }
 
 .link :hover {
-    background-color: blueviolet;
     transition: 1s;
+    background-color: #DCDCDC;
 }
 
 #ChecklistBotoes {
     justify-content: center;
+    display: block;
+    align-items: flex-end;
+    text-align: center;
 }
 
-#ChecklistBotoes button {
-    margin: 10px 0px 20px 40px;
-    border-radius: 5px;
+#ChecklistBotoes a{
+    margin: 10px 0px 20px 5px;
 }
 
 button {
     cursor: pointer;
 }
 
+#salvar {
+    border-radius: 10px 0px 0px 10px;
+}
+
+#finalizar{
+    border-radius: 0px 10px 10px 0px;
+}
+
+.barra {
+    width: 50px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: #ccc;
+}
+
+.barra div {
+    height: 100%;
+    border-radius: 10px;
+    background-image: linear-gradient(red, yellow, green);
+}

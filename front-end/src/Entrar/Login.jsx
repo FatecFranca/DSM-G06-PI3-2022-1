@@ -17,7 +17,7 @@ export default function Login() {
                         </div>
                         <div><label>Senha</label>
                             <input type="password" placeholder=""></input></div>
-                        <div><button>Entrar</button></div>
+                        <div id="entrar"><button>Entrar</button></div>
                         <div><Link id="cadastre" to="/cadastrar"><p>Cadastre-se</p></Link></div>
 
                     </form>
