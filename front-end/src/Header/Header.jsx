@@ -1,8 +1,8 @@
 import React from 'react';
 
 //importar pacote link que é parte do react-router-dom
-import I from '../Images/icono_perfil.png'
 import { stack as Menu } from 'react-burger-menu'
+import I from '../Images/icono_perfil.png'
 
 import './Header.css';
 

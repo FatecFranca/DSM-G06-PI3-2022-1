@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Login.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate  } from 'react-router-dom';
+import api from '../service/api';
+
 
 export default function Login() {
-    return (
+    const [user, setUser] = useState("");
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+    
+    const singIn = async() => {
+        const authenticated =  await api.post('/login',{email:user, password }).then((res) => {
+            localStorage.setItem('user.token', res.token );
+            return res.auth;
+        }).catch((res) => alert('Usuario não encontrado'));
 
+        if(authenticated){
+            navigate('/checklist');
+        }
+    }
+    return (
         <div className="Cartoes2">
             <div className="Cartao2">
                 <div className="Conteudo2">
@@ -13,11 +28,11 @@ export default function Login() {
 
                         <div>
                             <label>Email</label>
-                            <input type="email" placeholder="jailsonmendes@gmail.com"></input>
+                            <input type="email" placeholder="jailsonmendes@gmail.com" onChange={(value) => { setUser(value.currentTarget.value) }}></input>
                         </div>
                         <div><label>Senha</label>
-                            <input type="password" placeholder=""></input></div>
-                        <div id="entrar"><button>Entrar</button></div>
+                            <input type="password" onChange={(value) => { setPassword(value.currentTarget.value) }}></input></div>
+                        <div><button onClick={singIn}>Entrar</button></div>
                         <div><Link id="cadastre" to="/cadastrar"><p>Cadastre-se</p></Link></div>
 
                     </form>
@@ -25,7 +40,5 @@ export default function Login() {
                 </div>
             </div>
         </div>
-
-
     )
 }
