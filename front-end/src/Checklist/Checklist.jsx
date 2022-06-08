@@ -12,31 +12,40 @@ const alterarProgresso = () => {
 
 export default function Checklist() {
     const [questionsGroup, setQuestionsGroup] = useState(data);
-    useEffect(async() => {
+    useEffect(async () => {
         // colocar o prefixo correto
-         await api.get('group/').then(res => setQuestionsGroup(res.data)).catch(() => alert('não foi possível encontrar um grupo'))
+        await api.get('group/').then(res => setQuestionsGroup(res.data)).catch(() => alert('não foi possível encontrar um grupo'))
     }, []);
 
-    const GroupItem = ({group}) => {
-       return(
-        <Link key={group._id} className="link" to="/checklist/questoes">
-        <div className="Cartao3">
+    const GroupItem = ({ group }) => {
+        return (
+            <Link key={group._id} className="link" to="/checklist/questoes">
+                <div className="Cartao3">
 
-            <div className="Conteudo">
+                    <div className="Conteudo3">
 
-                ({group.group})
+                        ({group.group})
 
-            </div>
+                    </div>
 
-        </div>
-    </Link>
-       )
+                </div>
+            </Link>
+        )
     }
     return (
-        <div className="Cartoes3">
-                {questionsGroup && 
-                    questionsGroup.map((group) => <GroupItem group={group}  />)
+        <div id="Checklist">
+            <div id="Cartoes3">
+                {questionsGroup &&
+                    questionsGroup.map((group) => <GroupItem group={group} />)
                 }
+            </div>
+            <div id="ChecklistBotoes">
+                <Link to="/">
+                    <button id="salvar">Salvar</button>
+                </Link>
+                <Link to="/"><button id="finalizar">Finalizar</button></Link>
+
+            </div>
         </div>
 
     )

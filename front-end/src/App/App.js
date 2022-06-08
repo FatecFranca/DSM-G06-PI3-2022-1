@@ -9,6 +9,7 @@ import { Routes, Route } from 'react-router-dom';
 import Login from '../Entrar/Login';
 import Checklist from '../Checklist/Checklist';
 import Questoes from '../Questoes/Questoes';
+import Avaliacoes from '../Avaliacoes/Avaliacoes';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/entrar" element={<Login />}></Route>
         <Route exact path="/checklist" element={<Checklist />}></Route>
         <Route exact path="/checklist/questoes" element={<Questoes />}></Route>
+        <Route exact path="/avaliacoes" element={<Avaliacoes />}></Route>
       </Routes>
 
     </div>

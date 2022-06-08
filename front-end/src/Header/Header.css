@@ -1,19 +1,18 @@
 .menu {
-    height: 9vh;
+    height: 14vh;
     background-color: #fada95;
     font-size: 16px;
     border-bottom: 4px solid rgb(43, 43, 43);
-    padding-right: 40px;
     display: grid;
     align-items: center;
     display: flex;
 }
 
 .navMenu ul {
-    display: flex;
-    float: left;
+    display: inline-block;
     align-items: center;
-    margin: 0;    
+    margin: 0;
+    position: absolute;
 }
 
 .menu ul {
@@ -81,8 +80,10 @@ ul li {
 
 .navMenu {
     align-items: center;
-    display: block;
+    display: grid;
     width: 100%;
+    position: absolute;
+    text-align: center;
 }
 
 #menu2 {
@@ -98,4 +99,18 @@ ul li {
 .bm-overlay {
     top: 0;
     left: 0;
+}
+
+#logo{
+    width: 75px;
+    height: 75px;
+    text-align: center;
+}
+
+#parte1 {
+    float: left;
+}
+
+#parte2 {
+    float: right;
 }
