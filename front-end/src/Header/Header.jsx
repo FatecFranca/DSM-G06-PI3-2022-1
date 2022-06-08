@@ -14,48 +14,42 @@ class Header extends React.Component {
         return (
 
             <div className="menu">
-                
+
                 <nav className="navMenu">
-                   
-                        <ul id="conteudo">
-                            <ul id="parte1">
+
+                    <ul id="conteudo">
+                        <ul id="parte1">
                             <Menu id=''>
                                 <a href="/">Home</a>
                                 <a href='/cadastrar'>Cadastrar</a>
                                 <a href="/entrar">Entrar</a>
                                 <a href="/checklist">Checklist</a>
-                                
-                                
-                            </Menu>
-                            </ul>
-                            
-                        
-                    
-                      <img id="logo" src={L} alt="" />
-                     
-                        
-                        
-                        
-                                            
-                                <ul id="parte2">
-                                <li><a href="/"> Sobre </a></li>
-                                
-                                <li><a href="/cursos"> Quem somos </a></li>
-                                <Menu noOverlay right customBurgerIcon={<img id='iconeperfil' alt='' src={I} />}>
-                                    <a href="/">Meu Perfil</a>
-                                    <a href="/cadastrar">Cadastrar</a>
-                                    <a href="/entrar">Entrar</a>
-                                    <a href="/avaliacoes"> Minhas avaliações </a>
-                                    
-                                </Menu>
-                                </ul>
-                                
-                            </ul>                 
 
-            
-                    
+
+                            </Menu>
+                        </ul>
+
+                        <img id="logo" src={L} alt="" />
+
+                        <ul id="parte2">
+                            <li><a href="/"> Sobre </a></li>
+
+                            <li><a href="/cursos"> Quem somos </a></li>
+                            <Menu noOverlay right customBurgerIcon={<img id='iconeperfil' alt='' src={I} />}>
+                                <a href="/">Meu Perfil</a>
+                                <a href="/cadastrar">Cadastrar</a>
+                                <a href="/entrar">Entrar</a>
+                                <a href="/avaliacoes"> Minhas avaliações </a>
+
+                            </Menu>
+                        </ul>
+
+                    </ul>
+
+
+
                 </nav>
-                
+
             </div>
 
         );
