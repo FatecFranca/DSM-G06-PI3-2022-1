@@ -39,3 +39,12 @@ footer {
 #ergolist{
     font-size: 30px;
 }
+
+#logo2 {
+    width: 150px;
+    height: 150px;
+    margin: 30px;
+    top: 20px;
+    float: left;
+    padding: auto;
+}

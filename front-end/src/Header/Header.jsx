@@ -16,9 +16,10 @@ class Header extends React.Component {
             <div className="menu">
                 
                 <nav className="navMenu">
-                    <div>
-                        <ul>
-                            <Menu>
+                   
+                        <ul id="conteudo">
+                            <ul id="parte1">
+                            <Menu id=''>
                                 <a href="/">Home</a>
                                 <a href='/cadastrar'>Cadastrar</a>
                                 <a href="/entrar">Entrar</a>
@@ -26,12 +27,17 @@ class Header extends React.Component {
                                 
                                 
                             </Menu>
-                        
+                            </ul>
                             
                         
-                            
-                        </ul>
-                        <ul>
+                    
+                      <img id="logo" src={L} alt="" />
+                     
+                        
+                        
+                        
+                                            
+                                <ul id="parte2">
                                 <li><a href="/"> Sobre </a></li>
                                 
                                 <li><a href="/cursos"> Quem somos </a></li>
@@ -42,11 +48,12 @@ class Header extends React.Component {
                                     <a href="/avaliacoes"> Minhas avaliações </a>
                                     
                                 </Menu>
-                            </ul>
-                        <img id="logo" src={L} alt="" />
-                        
+                                </ul>
+                                
+                            </ul>                 
 
-                    </div>
+            
+                    
                 </nav>
                 
             </div>

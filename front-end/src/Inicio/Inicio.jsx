@@ -2,6 +2,7 @@ import React from 'react'
 import TypeIt from 'typeit-react'
 import './Inicio.css'
 import { Link } from 'react-router-dom'
+import L from '../Images/LogoErgolist2.png'
 
 
 export default function Inicio() {
@@ -10,6 +11,7 @@ export default function Inicio() {
         <div id="outer-container">
                 <div>
                     <div className="apresentacao">
+                        <img id="logo2" src={L} alt="" />
                         <TypeIt options={{
                             cursor: false,
                         }}><Link id='ergolist' to="/"><strong>ERGOLIST</strong></Link><strong></strong>

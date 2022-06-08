@@ -6,13 +6,14 @@
     display: grid;
     align-items: center;
     display: flex;
+    justify-self: center;
 }
 
 .navMenu ul {
-    display: inline-block;
+    display: flex;
     align-items: center;
-    margin: 0;
-    position: absolute;
+    padding: 0;
+    margin: auto;
 }
 
 .menu ul {
@@ -80,14 +81,10 @@ ul li {
 
 .navMenu {
     align-items: center;
-    display: grid;
+    display: flexbox;
     width: 100%;
-    position: absolute;
+    justify-content: center;
     text-align: center;
-}
-
-#menu2 {
-    float: right;
 }
 
 .bm-menu-wrap{
@@ -102,15 +99,28 @@ ul li {
 }
 
 #logo{
-    width: 75px;
-    height: 75px;
-    text-align: center;
+    width: 85px;
+    height: 85px;
 }
 
 #parte1 {
-    float: left;
+    margin-left: 25px;
+    width: 33%;
 }
 
 #parte2 {
+    margin-right: 25px;
+    width: 33%;
+    justify-content: flex-end;
+}
+
+#iconeperfil {
     float: right;
+
+}
+
+#conteudo {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
