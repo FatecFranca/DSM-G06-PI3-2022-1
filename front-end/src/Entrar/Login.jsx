@@ -4,21 +4,29 @@ import { Link, useNavigate  } from 'react-router-dom';
 import api from '../service/api'
 
 
+
+
 export default function Login() {
     const [user, setUser] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
     
     const singIn = async(e) => {
-        const authenticated =  await api.post('user/login',{email:user, password }).then((res) => {
-            localStorage.setItem('user.token', res.token );
-            return res.auth;
-        }).catch((res) => console.log('Usuario não encontrado'));
+        e.preventDefault();
+        await api.post('http://localhost:3333/user/login', {
+            email : user,
+            password : password
+            })
+            .then(function (res) {
+                localStorage.setItem('user.token', res.data.token)
+                navigate('/checklist')
+                })
+            .catch(function (error) {
+                console.log("Usuário ou senha invalidas")
+                console.log(error)
+            }) 
+        
 
-        if(authenticated){
-            navigate('/checklist');
-        }
-        return authenticated;
     }
     return (
         <div className="Cartoes2">
