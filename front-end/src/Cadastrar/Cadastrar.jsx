@@ -3,7 +3,7 @@ import { useNavigate  } from 'react-router-dom';
 import api from '../service/api';
 import './Cadastrar.css';
 
-export default function Cadastrar() {
+export default function Cadastrar({title,fcTitle}) {
     const [fullName, setFullName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");

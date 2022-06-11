@@ -123,6 +123,7 @@ controller.delete = async (req, res) => {
 
 controller.login = async (req, res) => {
     try {
+        console.log('entrou');
         // Buscar o usuário no BD
         const user = await User.findOne({email: req.body.email}).select('password_hash')
         if(! user) {    // Usuário não encontrado
