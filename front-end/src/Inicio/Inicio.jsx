@@ -3,20 +3,30 @@ import TypeIt from 'typeit-react'
 import './Inicio.css'
 import { Link } from 'react-router-dom'
 import L from '../Images/LogoErgolist2.png'
+import I from '../Images/InstagramLogo.png'
+import F from '../Images/LogoFacebook.png'
+import T from '../Images/LogoTwitter.png'
 
 
 export default function Inicio() {
     return (
 
-        <div id="outer-container">
                 <div>
-                    <div className="apresentacao">
-                        <img id="logo2" src={L} alt="" />
-                        <TypeIt options={{
-                            cursor: false,
-                        }}><Link id='ergolist' to="/"><strong>ERGOLIST</strong></Link><strong></strong>
-                        </TypeIt>
+                    <div id="conjunto">
+                        <div id="redessociais">
+                            <img src={I} alt="" />
+                            <img src={F} alt="" />
+                            <img src={T} alt="" />
+                        </div>
+                        <div className="apresentacao">
+                            <img id="logo2" src={L} alt="" />
+                            <TypeIt options={{
+                                cursor: false,
+                            }}><Link id='ergolist' to="/"><strong>ERGOLIST</strong></Link><strong></strong>
+                            </TypeIt>
+                        </div>
                     </div>
+
 
                     <footer>
 
@@ -25,8 +35,6 @@ export default function Inicio() {
 
                     </footer>
                 </div>
-          
-        </div>
 
 
     )

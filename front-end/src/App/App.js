@@ -18,13 +18,12 @@ function App() {
 
   return (
     <div>
+      <Header />
       
-      {authenticated && <Header />}
       <Routes>
-        <Route exact path="/inicio" element={<Inicio />}></Route>
-        <Route exact path="/" element={<Login />}></Route>
+        <Route exact path="/" element={<Inicio />}></Route>
         <Route exact path="/cadastrar" element={<Cadastrar />}></Route>
-        <Route exact path="/entrar" element={<Login />}></Route>
+        <Route exact path="/entrar" element={<Login />}>{authenticated}</Route>
         <Route exact path="/checklist" element={<Checklist />}></Route>
         <Route exact path="/checklist/questoes" element={<Questoes />}></Route>
         <Route exact path="/avaliacoes" element={<Avaliacoes />}></Route>

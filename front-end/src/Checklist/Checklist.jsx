@@ -3,6 +3,7 @@ import './Checklist.css'
 import { Link } from 'react-router-dom'
 import api from '../service/api';
 import data from './mock'
+import Titulo from '../Titulos/Titulo';
 
 const progresso = document.querySelector(".barra div")
 
@@ -24,7 +25,7 @@ export default function Checklist() {
 
                     <div className="Conteudo3">
 
-                        ({group.group})
+                        {group.group}
 
                     </div>
 
@@ -34,6 +35,7 @@ export default function Checklist() {
     }
     return (
         <div id="Checklist">
+            <Titulo texto = 'Home'/> 
             <div id="Cartoes3">
                 {questionsGroup &&
                     questionsGroup.map((group) => <GroupItem group={group} />)
