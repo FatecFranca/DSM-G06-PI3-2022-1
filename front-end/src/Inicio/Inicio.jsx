@@ -14,8 +14,8 @@ export default function Inicio() {
                 <div>
                     <div id="conjunto">
                         <div id="redessociais">
-                            <img src={I} alt="" />
                             <img src={F} alt="" />
+                            <img src={I} alt="" />
                             <img src={T} alt="" />
                         </div>
                         <div className="apresentacao">

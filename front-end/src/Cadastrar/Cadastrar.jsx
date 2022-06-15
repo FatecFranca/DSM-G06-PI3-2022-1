@@ -44,7 +44,7 @@ export default function Cadastrar({title,fcTitle}) {
                         </div>
                         <div id='Checkbox'>
                             <input type="checkbox" id="Termos" />
-                            <label for="Termos"> Li e concordo com os termos e serviços </label> 
+                            <label for="Termos"> <a href="/" id="TS"> Li e concordo com os termos e serviços </a> </label>
                         </div>
                         <div><button>Cadastrar</button></div>
                     </form>

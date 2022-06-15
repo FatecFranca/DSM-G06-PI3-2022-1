@@ -35,7 +35,7 @@ export default function Checklist() {
     }
     return (
         <div id="Checklist">
-            <Titulo texto = 'Home'/> 
+            <Titulo texto = 'Checklist'/> 
             <div id="Cartoes3">
                 {questionsGroup &&
                     questionsGroup.map((group) => <GroupItem group={group} />)

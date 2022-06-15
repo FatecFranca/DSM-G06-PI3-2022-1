@@ -29,7 +29,7 @@ class Header extends React.Component {
                             </Menu>
                         </ul>
 
-                        <img id="logo" src={L} alt="" />
+                        <a href="/"><img id="logo" src={L} alt="" /></a>
 
                         <ul id="parte2">
                             <li><a href="/"> Sobre </a></li>

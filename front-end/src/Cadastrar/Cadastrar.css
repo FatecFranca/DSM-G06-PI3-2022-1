@@ -37,12 +37,13 @@ input {
 }
 
 #Termos {
-    width: 15px;
-    height: 15px;
+    width: 17px;
+    height: 17px;
 }
- input :last-child {
+
+input :last-child {
      text-align: center;
- }
+}
 
 h1{
     text-align: center;
@@ -70,4 +71,14 @@ label :last-child{
 
 #Checkbox{
     display: flex;
+}
+
+#TS {
+    text-decoration: none;
+    color: black;
+}
+
+#TS:hover {
+    color: blue;
+    transition: 1s;
 }

@@ -3,6 +3,7 @@ import './Avaliacoes.css'
 import { Link } from 'react-router-dom'
 import api from '../service/api';
 import data1 from './mock'
+import Titulo from '../Titulos/Titulo';
 
 export default function Avaliacoes() {
     const [questionsGroup, setQuestionsGroup] = useState(data1);
@@ -18,7 +19,7 @@ export default function Avaliacoes() {
 
             <div className="Conteudo3">
 
-                ({group.group})
+                {group.group}
 
             </div>
 
@@ -28,6 +29,7 @@ export default function Avaliacoes() {
     }
     return (
         <div id="Checklist">
+            <Titulo texto="Avaliações" />
             <div id="Cartoes3">
                     {questionsGroup && 
                         questionsGroup.map((group) => <GroupItem group={group}  />)
