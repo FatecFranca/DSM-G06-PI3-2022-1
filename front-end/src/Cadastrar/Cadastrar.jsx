@@ -4,27 +4,36 @@ import api from '../service/api';
 import './Cadastrar.css';
 
 export default function Cadastrar({title,fcTitle}) {
-    const [fullName, setFullName] = useState("");
+    const [fullname, setFullName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [repassword, setRepassword] = useState("");
     const navigate = useNavigate();
 
-    const register = async() => {
+    const register = async(e) => {
+        e.preventDefault();
         if(password !== repassword){
            return alert('as senhas não batem')
         }
-        await api.post('/',{email, password,fullName }).then((res) => {
+        await api.post('/user/',{email, password,fullname })
+        .then(function (res) {
             localStorage.setItem('user.token', res.token );
-            return navigate('/checklist');
-        }).catch(() => alert('Não foi possível realizar o cadastro'));
+            return navigate('/');
+        })
+        .catch(function(error) {
+            if(error === "Email já cadastrado"){
+                console.log(error)
+                alert("Email já cadastrado")
+            }
+            else{alert(error)}
+        })
     } 
     return (
 
         <div className="Cartoes">
             <div className="Cartao">
                 <div className="Conteudo">
-                    <form>
+                    <form onSubmit={register}>
                         <h1>Cadastro</h1>
                         <div>
                             <label for="Nome">Nome</label>
@@ -44,7 +53,7 @@ export default function Cadastrar({title,fcTitle}) {
                         </div>
                         <div id='Checkbox'>
                             <input type="checkbox" id="Termos" />
-                            <label for="Termos"> <a href="/" id="TS"> Li e concordo com os termos e serviços </a> </label>
+                            <label for="Termos"> Li e concordo com os termos e serviços </label>
                         </div>
                         <div><button>Cadastrar</button></div>
                     </form>

@@ -19,11 +19,12 @@ export default function Login() {
             })
             .then(function (res) {
                 localStorage.setItem('user.token', res.data.token)
-                navigate('/checklist')
+                navigate('/')
                 })
             .catch(function (error) {
                 console.log("Usuário ou senha invalidas")
                 console.log(error)
+                alert("Usuário ou senha inválidas")
             }) 
         
 

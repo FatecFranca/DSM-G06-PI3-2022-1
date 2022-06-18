@@ -9,20 +9,24 @@ const controller = {}   // Objeto vazio
 // entrada do glossário
 controller.create = async (req, res) => {
     try {
-        // É necessário agora ter um campo 'password'
-        // no body
-        if(!req.body.password) return res.status(500).send({error: 'Path "password" is required'})
+        const email = await User.findOne({email : req.body.email}).select('email')
+        if(! email) {
+            if(!req.body.password) return res.status(500).send({error: 'Path "password" is required'})
 
-        // Encripta o valor de "password" em "password_hash"
-        req.body.password_hash = await bcrypt.hash(req.body.password, 12)
+            // Encripta o valor de "password" em "password_hash"
+            req.body.password_hash = await bcrypt.hash(req.body.password, 12)
 
-        // Destrói o campo "password" para que ele não seja
-        // passado para o model
-        delete req.body.password
-        
-        await User.create(req.body)
-        // HTTP 201: Created
-        res.status(201).end()
+            // Destrói o campo "password" para que ele não seja
+            // passado para o model
+            delete req.body.password
+            
+            await User.create(req.body)
+            // HTTP 201: Created
+            res.status(201).end()
+        }
+        else {
+            res.status(400).send({error: 'Email já cadastrado'})
+        }
     }
     catch(error) {
         console.error(error)
