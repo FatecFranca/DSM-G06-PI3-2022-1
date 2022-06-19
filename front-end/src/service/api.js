@@ -8,4 +8,9 @@ const api = axios.create({
   }
 });
 
+if(localStorage.getItem('user.token')) {
+  const token = localStorage.getItem('user.token');
+  api.defaults.headers.common["x-access-token"] = token
+}
+
 export default api;

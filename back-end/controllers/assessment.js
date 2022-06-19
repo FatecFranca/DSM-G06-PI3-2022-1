@@ -6,8 +6,13 @@ const controller = {}   // Objeto vazio
 // Função que será chamada para criar uma nova
 // entrada do glossário
 controller.create = async (req, res) => {
+    console.log(req.authenticatedId)
     try {
-        await Assessment.create(req.body)
+        await Assessment.create({
+            title : req.body.title,
+            description : req.body.description,
+            user : req.authenticatedId
+        })
         // HTTP 201: Created
         res.status(201).end()
     }
@@ -23,6 +28,7 @@ controller.create = async (req, res) => {
 controller.retrieve = async (req, res) => {
     try {
         const result = await Assessment.find({user: req.authenticatedId}).populate('user')
+        console.log(result)
         // HTTP 200: OK é implícito aqui
         res.send(result)
     }

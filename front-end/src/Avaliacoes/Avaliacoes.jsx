@@ -8,26 +8,64 @@ import E from '../Images/excluir.png'
 import A from '../Images/AdicionarIcon.png'
 
 export default function Avaliacoes() {
-    const [questionsGroup, setQuestionsGroup] = useState(data1);
-    useEffect(async () => {
+    const [avaliacoes, setAvaliacoes] = useState(null);
+    useEffect(() => {
         // colocar o prefixo correto
-        await api.get('question_group/').then(res => setQuestionsGroup(res.data)).catch(() => alert('não foi possível encontrar um grupo'))
+        const fetchData = async () => {
+            await api.get("/assessment/")
+            .then((res) => {
+                console.log(localStorage.getItem('user.token'))
+                console.log(res)
+                setAvaliacoes(res.data)
+            })
+            .catch((e) => {console.log(e); alert(e)})
+        };
+        fetchData()
     }, []);
 
-    const GroupItem = ({ group }) => {
+
+
+    const criarAvaliacao = () => {
+        const postData = async () => {
+            const result = await api.post("/assessment/", { 
+                title : "Titulo teste",
+                description : "Descrição teste",
+                user : localStorage.getItem('user.token')
+            
+            })
+            console.log(result);
+        }
+        postData()
+        .then((res) => {
+            console.log(res)
+            window.location.reload()
+        })
+    }
+
+
+    const deletarAvaliacao = (id) => {
+        alert("here")
+        const deleteData = async () => {
+            await api.delete("/assessment/", {_id : id})
+
+        }
+        deleteData();
+    }
+
+    const GroupItem = ({ data }) => {
         return (
-            <Link key={group._id} className="link" to="/avaliacoes">
+            <Link key={data._id} className="link" to="/avaliacoes">
                 <div className="Cartao4">
 
                     <div className="Conteudo4">
 
 
-                        {group.group}
+                        {data.title}
                         <hr />
                         <p>22/04/2024</p>
                         <hr />
                         <p>Dsjwjw wuhuyyuqw wygewyg.</p>
-                        <button type="submit" id="butao"><img id="lixeirinha" src={E} alt="" /></button>
+                        <button id="butao"><img id="lixeirinha" src={E} alt="" onSubmit={() => {deletarAvaliacao(data._id)}}/></button>
 
 
 
@@ -37,18 +75,23 @@ export default function Avaliacoes() {
             </Link>
         )
     }
+
+
+
+
+
     return (
         <div id="Checklist1">
             <Titulo texto="Avaliações" />
             <div id="Cartoes4">
-                {questionsGroup &&
-                    questionsGroup.map((group) => <GroupItem group={group} />)
+                {avaliacoes &&
+                    avaliacoes.map((data) => <GroupItem data={data} />)
                 }
 
             </div>
 
             <div id="novaavaliacao">
-                <a id="avalialink" href="/checklist">
+                <button id="avalialink" onClick={criarAvaliacao}>
 
                 <div id="aaa">
                     <img id="adicionar" src={A} alt="" />
@@ -62,7 +105,7 @@ export default function Avaliacoes() {
 
 
 
-                </a>
+                </button>
 
             </div>
 
