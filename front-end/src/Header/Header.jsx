@@ -7,7 +7,6 @@ import I from '../Images/icono_perfil.png'
 import L from '../Images/LogoErgolist.png'
 
 import './Header.css';
-import './Header1.css';
 
 class Header extends React.Component {
     
@@ -27,12 +26,13 @@ class Header extends React.Component {
 
                     <ul id="conteudo">
                         <ul id="parte1">
-                            <Menu id=''>
+                            <Menu>
+                
                                 <a href="/">Home</a>
-                                <a href='/cadastrar'>Cadastrar</a>
-                                <a href="/entrar">Entrar</a>
                                 <a href="/checklist">Checklist</a>
+                                <a href="/avaliacoes">Minhas Avaliações</a>          
 
+                                  
 
                             </Menu>
                         </ul>
@@ -44,7 +44,7 @@ class Header extends React.Component {
 
                             <li><a href="/"> Quem somos </a></li>
                             
-                            <Menu1 onStateChange={ isMenuOpen } id="opa" notransition noOverlay right customBurgerIcon={<img id='iconeperfil' alt='' src={I} />}>
+                            <Menu1 id="opa" right customBurgerIcon={<img id='iconeperfil' alt='' src={I} />}>
                                 <a href="/">Meu Perfil</a>
                                 <a href="/cadastrar">Cadastrar</a>
                                 <a href="/entrar">Entrar</a>
