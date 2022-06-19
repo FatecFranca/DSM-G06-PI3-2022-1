@@ -1,0 +1,59 @@
+#opa .bm-burger-button {
+    position: relative;
+    width: 36px;
+    height: 36px;
+}
+
+#opa .bm-burger-bars {
+    background-color: rgb(0, 0, 0);
+    margin: 0;
+}
+
+#opa .bm-burger-bars-hover {
+    background-color: #ab2a2a;
+    transition: 0.5s;
+}
+
+
+#opa .bm-menu {
+    font-size: 1.15em;
+    height: 40px;
+    width: 250px;
+    border: none;
+    background-color: transparent;
+}
+
+#opa .bm-item {
+    padding: 15px 0px 15px 0px;
+    width: 100%;
+    background-color: #ab2a2a;
+    text-align: center;
+    border-bottom: 2px solid #fada95;
+    color: white;
+    text-decoration: none;
+}
+
+#opa .bm-item:hover {
+    background-color: #9edded;
+    color: black;
+    transition: 2s;
+}
+
+#opa .bm-cross {
+    display: none;
+}
+
+#opa {
+    top: 70px;
+    right: -200px;
+    margin: 0;
+}
+
+#opa .bm-menu-wrap{
+    top: 0;
+}
+
+#opa .bm-overlay {
+    top: 0;
+    left: 0;
+}
