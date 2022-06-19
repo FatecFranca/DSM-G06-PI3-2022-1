@@ -10,15 +10,15 @@ export const AuthProvider = ({ children }) => {
     //const api = UseApi();
 
     useEffect(() => {
-        
-        validatetoken();
-    },[])
 
-    const validatetoken = async() => {
+        validatetoken();
+    }, [])
+
+    const validatetoken = async () => {
         try {
             const token = localStorage.getItem('user.token');
 
-            if(token) {
+            if (token) {
                 // let resp = false;
                 // const data = await api.validToken(token)
                 //     .catch(function(error) {
@@ -29,7 +29,7 @@ export const AuthProvider = ({ children }) => {
                 //     }                       
                 // }
                 // );
-                
+
                 // if(data) {
                 //     const user = await api.UserGetById(data.id)
                 //     setUser(user);
@@ -40,9 +40,9 @@ export const AuthProvider = ({ children }) => {
             console.error(error)
         }
     }
- 
+
     // const signin = async(email, password) => {
-        
+
     //     const data = await api.logIn(email, password);
     //     if(!data) {
     //         return false;
@@ -88,14 +88,14 @@ export const AuthProvider = ({ children }) => {
     //         localStorage.setItem('email', '')                
     //     } user, signin, signout, createUser, GetGroupId, setgroupIDselec,
 
-        
 
 
 
 
-    
+
+
     return (
-        <AuthContext.Provider value={{  authenticated, }}>
+        <AuthContext.Provider value={{ authenticated, }}>
             {children}
         </AuthContext.Provider>
     )

@@ -11,22 +11,22 @@ const alterarProgresso = () => {
     progresso.setAttribute("style", "width: " /* concatenar valor do atributo */ + "%")
 }
 
-export default class Checklist extends Component{
-    constructor(props){
+export default class Checklist extends Component {
+    constructor(props) {
         super(props)
         this.state = {
-            data : []
+            data: []
         }
     }
 
-    getData(){
+    getData() {
         api.get("question-group/")
-        .then(res => {
-            var data = res.data
-            this.setState({data: data})
-        })
+            .then(res => {
+                var data = res.data
+                this.setState({ data: data })
+            })
     }
-    componentDidMount(){
+    componentDidMount() {
         this.getData()
     }
 
@@ -34,27 +34,27 @@ export default class Checklist extends Component{
         console.log("data:")
         console.log(this.state.data)
         return (
-            <div id="Checklist">
-            <Titulo texto = 'Checklist'/> 
-            <div id="Cartoes3">
-                {this.state.data.map(d => (
-                    <Link key={d._id} className="link" to="/checklist/questoes" state={d._id}>
-                        <div className="Cartao3">
-                            <div className="Conteudo3">
-                                {d.group}
+            <div id="checklist">
+                <Titulo texto='Checklist' />
+                <div id="checklist_cartoes">
+                    {this.state.data.map(d => (
+                        <Link key={d._id} className="link" to="/checklist/questoes" state={d._id}>
+                            <div className="checklist_cartao">
+                                <div className="conteudo_cartCheck">
+                                    {d.group}
+                                </div>
                             </div>
-                        </div>
+                        </Link>
+                    ))}
+                </div>
+                <div id="checklist_botoes">
+                    <Link to="/">
+                        <button id="salvar">Salvar</button>
                     </Link>
-                ))}
-            </div>
-            <div id="ChecklistBotoes">
-                <Link to="/">
-                    <button id="salvar">Salvar</button>
-                </Link>
-                <Link to="/"><button id="finalizar">Finalizar</button></Link>
+                    <Link to="/"><button id="finalizar">Finalizar</button></Link>
 
+                </div>
             </div>
-        </div>
         )
     }
 }

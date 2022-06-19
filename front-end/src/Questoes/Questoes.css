@@ -5,7 +5,8 @@
     display: flex;
     flex-direction: column;
 }
- /*porque senhor pq????*/
+
+/*porque senhor pq????*/
 .apresentacao {
     border: 4px solid rgb(177, 177, 177);
     border-radius: 40px;
@@ -27,7 +28,7 @@
 
 .apresentacao a {
     text-decoration: none;
-    color: black;
+    color: #000;
 }
 
 .inicio p {
@@ -38,6 +39,6 @@ footer {
     margin-top: 130px;
 }
 
-#ergolist{
+#ergolist {
     font-size: 30px;
 }

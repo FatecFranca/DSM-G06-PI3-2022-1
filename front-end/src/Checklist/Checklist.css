@@ -1,10 +1,10 @@
-#Checklist {
+#checklist {
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
 }
 
-#Cartoes3 {
+#checklist_cartoes {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -14,7 +14,7 @@
     align-self: center;
 }
 
-.Cartao3 {
+.checklist_cartao {
     border: 4px solid;
     overflow: hidden;
     justify-content: space-around;
@@ -25,16 +25,16 @@
     height: 230px;
 }
 
-.Conteudo3 {
+.conteudo_cartCheck {
     flex-grow: 1;
-    background-color:  #fff;
+    background-color: #fff;
     color: #2a90ab;
     padding: 20px;
     display: grid;
     text-align: center;
     align-items: center;
     justify-content: space-around;
-   
+
 }
 
 .link {
@@ -51,14 +51,14 @@
     background-color: #DCDCDC;
 }
 
-#ChecklistBotoes {
+#checklist_botoes {
     justify-content: center;
     display: block;
     align-items: flex-end;
     text-align: center;
 }
 
-#ChecklistBotoes a{
+#checklist_botoes a {
     margin: 10px 0px 20px 5px;
 }
 
@@ -70,7 +70,7 @@ button {
     border-radius: 10px 0px 0px 10px;
 }
 
-#finalizar{
+#finalizar {
     border-radius: 0px 10px 10px 0px;
 }
 

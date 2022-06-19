@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 import api from '../service/api';
 import data1 from './mock'
 import Titulo from '../Titulos/Titulo';
-import E from '../Images/excluir.png'
-import A from '../Images/AdicionarIcon.png'
+import Excluir from '../Images/excluir.png'
+import Adicionar from '../Images/icone_adicionar.png'
 
 export default function Avaliacoes() {
     const [avaliacoes, setAvaliacoes] = useState(null);
@@ -13,41 +13,36 @@ export default function Avaliacoes() {
         // colocar o prefixo correto
         const fetchData = async () => {
             await api.get("/assessment/")
-            .then((res) => {
-                console.log(localStorage.getItem('user.token'))
-                console.log(res)
-                setAvaliacoes(res.data)
-            })
-            .catch((e) => {console.log(e); alert(e)})
+                .then((res) => {
+                    console.log(localStorage.getItem('user.token'))
+                    console.log(res)
+                    setAvaliacoes(res.data)
+                })
+                .catch((e) => { console.log(e); alert(e) })
         };
         fetchData()
     }, []);
 
-
-
     const criarAvaliacao = () => {
         const postData = async () => {
-            const result = await api.post("/assessment/", { 
-                title : "Titulo teste",
-                description : "Descrição teste",
-                user : localStorage.getItem('user.token')
-            
+            const result = await api.post("/assessment/", {
+                title: "Titulo teste",
+                description: "Descrição teste",
+                user: localStorage.getItem('user.token')
             })
             console.log(result);
         }
         postData()
-        .then((res) => {
-            console.log(res)
-            window.location.reload()
-        })
+            .then((res) => {
+                console.log(res)
+                window.location.reload()
+            })
     }
-
 
     const deletarAvaliacao = (id) => {
         alert("here")
         const deleteData = async () => {
-            await api.delete("/assessment/", {_id : id})
-
+            await api.delete("/assessment/", { _id: id })
         }
         deleteData();
     }
@@ -55,19 +50,16 @@ export default function Avaliacoes() {
     const GroupItem = ({ data }) => {
         return (
             <Link key={data._id} className="link" to="/avaliacoes">
-                <div className="Cartao4">
+                <div className="cartoes_avaliacoes">
 
-                    <div className="Conteudo4">
-
+                    <div className="conteudo_cartAvaliac">
 
                         {data.title}
                         <hr />
                         <p>22/04/2024</p>
                         <hr />
                         <p>Dsjwjw wuhuyyuqw wygewyg.</p>
-                        <button id="butao"><img id="lixeirinha" src={E} alt="" onSubmit={() => {deletarAvaliacao(data._id)}}/></button>
-
-
+                        <button id="botaolixeirinha"><img id="lixeirinha" src={Excluir} alt="" onSubmit={() => { deletarAvaliacao(data._id) }} /></button>
 
                     </div>
 
@@ -76,10 +68,6 @@ export default function Avaliacoes() {
         )
     }
 
-
-
-
-
     return (
         <div id="Checklist1">
             <Titulo texto="Avaliações" />
@@ -87,31 +75,23 @@ export default function Avaliacoes() {
                 {avaliacoes &&
                     avaliacoes.map((data) => <GroupItem data={data} />)
                 }
-
             </div>
 
             <div id="novaavaliacao">
                 <button id="avalialink" onClick={criarAvaliacao}>
 
-                <div id="aaa">
-                    <img id="adicionar" src={A} alt="" />
-                    
-                    
-                    <p>Nova avaliação</p>
-                    
-                    
-                </div>
+                    <div id="botao_adicionar">
+                        <img id="adicionar" src={Adicionar} alt="" />
 
+                        <p>Nova avaliação</p>
 
-
+                    </div>
 
                 </button>
 
             </div>
 
-
         </div>
-
 
     )
 }

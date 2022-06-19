@@ -1,38 +1,38 @@
-import React, {useState} from 'react';
-import { useNavigate  } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import api from '../service/api';
 import './Cadastrar.css';
 
-export default function Cadastrar({title,fcTitle}) {
+export default function Cadastrar({ title, fcTitle }) {
     const [fullname, setFullName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [repassword, setRepassword] = useState("");
     const navigate = useNavigate();
 
-    const register = async(e) => {
+    const register = async (e) => {
         e.preventDefault();
-        if(password !== repassword){
-           return alert('as senhas não batem')
+        if (password !== repassword) {
+            return alert('as senhas não batem')
         }
-        await api.post('/user/',{email, password,fullname })
-        .then(function (res) {
-            localStorage.setItem('user.token', res.token );
-            return navigate('/');
-        })
-        .catch(function(error) {
-            if(error === "Email já cadastrado"){
-                console.log(error)
-                alert("Email já cadastrado")
-            }
-            else{alert(error)}
-        })
-    } 
+        await api.post('/user/', { email, password, fullname })
+            .then(function (res) {
+                localStorage.setItem('user.token', res.token);
+                return navigate('/');
+            })
+            .catch(function (error) {
+                if (error === "Email já cadastrado") {
+                    console.log(error)
+                    alert("Email já cadastrado")
+                }
+                else { alert(error) }
+            })
+    }
     return (
 
-        <div className="Cartoes">
-            <div className="Cartao">
-                <div className="Conteudo">
+        <div id="cartoes_cadastrar">
+            <div id="cartao_cadastrar">
+                <div id="conteudo_cartCadas">
                     <form onSubmit={register}>
                         <h1>Cadastro</h1>
                         <div>
@@ -51,9 +51,9 @@ export default function Cadastrar({title,fcTitle}) {
                             <label for="confirmarsenha">Confirme sua senha</label>
                             <input id="confirmarsenha" type="password" placeholder="" onChange={(value) => { setRepassword(value.currentTarget.value) }}></input>
                         </div>
-                        <div id='Checkbox'>
-                            <input type="checkbox" id="Termos" />
-                            <label for="Termos"> Li e concordo com os termos e serviços </label>
+                        <div id='checkbox'>
+                            <input type="checkbox" id="termos" />
+                            <label for="Termos"> <a id="termosServ" href="/">Li e concordo com os termos e serviços</a> </label>
                         </div>
                         <div><button>Cadastrar</button></div>
                     </form>

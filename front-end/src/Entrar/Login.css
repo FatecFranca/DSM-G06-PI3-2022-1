@@ -1,11 +1,11 @@
-.Cartoes2 {
+#login {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 90vh;
 }
 
-.Cartao2 {
+#cartao_login {
     border: 4px solid;
     overflow: hidden;
     justify-content: left;
@@ -16,10 +16,10 @@
     height: 400px;
 }
 
-.Conteudo2 {
+#conteudo_cartLogin {
     flex-grow: 1;
     background-color:  #fff;
-    color: black;
+    color: #000;
     padding: 20px;
     display: grid;
     text-align: left;
@@ -30,7 +30,7 @@
 input {
     border-radius: 10px;
     height: 30px;
-    border: 3px solid black;
+    border: 3px solid #000;
     width: 300px;
     margin-bottom: 10px;
 }
@@ -41,7 +41,7 @@ h1{
 
 button {
     border-radius: 50px;
-    border: 1px solid black;
+    border: 1px solid #000;
     background-color: silver;
     width: 150px;
     height: 40px;
@@ -52,12 +52,12 @@ label {
 }
 
 #cadastre {
-    color: black;
+    color: #000;
     text-align: center;
 }
 
-#cadastre:hover{
-    color: blue;
+#cadastre :hover{
+    color: #00f;
     transition: 1s;
 }
 

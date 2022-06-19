@@ -1,11 +1,9 @@
 import './App.css'
 import Header from '../Header/Header';
 import React, { useContext } from 'react';
-
 import Inicio from '../Inicio/Inicio';
 import Cadastrar from '../Cadastrar/Cadastrar';
-import { AuthContext} from '../contexts/AuthContext';
-
+import { AuthContext } from '../contexts/AuthContext';
 import { Routes, Route } from 'react-router-dom';
 import Login from '../Entrar/Login';
 import Checklist from '../Checklist/Checklist';
@@ -14,12 +12,12 @@ import Avaliacoes from '../Avaliacoes/Avaliacoes';
 
 function App() {
 
-  const {authenticated} = useContext(AuthContext);
+  const { authenticated } = useContext(AuthContext);
 
   return (
     <div>
       <Header />
-      
+
       <Routes>
         <Route exact path="/" element={<Inicio />}></Route>
         <Route exact path="/cadastrar" element={<Cadastrar />}></Route>

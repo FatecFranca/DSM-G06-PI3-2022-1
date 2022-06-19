@@ -1,11 +1,11 @@
-#Checklist1 {
+#avaliacoes {
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
     justify-content: center;
 }
 
-#Cartoes4 {
+.cartoes_avaliacoes {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -15,7 +15,7 @@
     align-self: center;
 }
 
-.Cartao4 {
+.cartao_avaliacoes {
     border: 4px solid;
     overflow: hidden;
     justify-content: space-around;
@@ -26,9 +26,9 @@
     height: auto;
 }
 
-.Conteudo4 {
+.conteudo_cartAvaliac {
     flex-grow: 1;
-    background-color:  #fff;
+    background-color: #fff;
     color: #2a90ab;
     padding: 20px;
     display: grid;
@@ -48,30 +48,11 @@
 
 .link :hover {
     transition: 1s;
-    background-color: #DCDCDC;
-}
-
-#ChecklistBotoes {
-    justify-content: center;
-    display: block;
-    align-items: flex-end;
-    text-align: center;
-}
-
-#ChecklistBotoes a{
-    margin: 10px 0px 20px 5px;
+    background-color: #dcdcdc;
 }
 
 button {
     cursor: pointer;
-}
-
-#salvar {
-    border-radius: 10px 0px 0px 10px;
-}
-
-#finalizar{
-    border-radius: 0px 10px 10px 0px;
 }
 
 .barra {
@@ -84,17 +65,12 @@ button {
 .barra div {
     height: 100%;
     border-radius: 10px;
-    background-image: linear-gradient(red, yellow, green);
 }
 
 #lixeirinha {
     width: 20px;
     height: 20px;
     background-image: url('../Images/excluir.png');
-}
-
-#nome {
-    margin-bottom: 2px solid black;
 }
 
 hr {
@@ -105,8 +81,8 @@ hr {
     border: none;
 }
 
-#butao {
-    border: 0; 
+#botaolixeirinha {
+    border: 0;
     background: transparent;
     justify-self: flex-start;
     width: 200px;
@@ -130,9 +106,9 @@ hr {
 
 }
 
-#avalialink {
+#avaliacoes_link {
     text-decoration: none;
-    color: black;
+    color: #000;
     justify-self: center;
 }
 
@@ -140,7 +116,7 @@ hr {
     align-items: center;
 }
 
-#aaa {
+#botao_adicionar {
     display: flex;
     height: 20px;
     align-items: center;
