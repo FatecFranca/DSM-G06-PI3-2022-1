@@ -4,6 +4,7 @@ import { slide as Menu2 } from 'react-burger-menu'
 import IconePerfil from '../Images/icone_perfil.png'
 import LogoErgolist from '../Images/logo_ergolist.png'
 import './Header.css';
+import ThemeSwitch from 'react-theme-switch';
 
 class Header extends React.Component {
 
@@ -22,19 +23,16 @@ class Header extends React.Component {
                                 <a href="/">Home</a>
                                 <a href="/checklist">Checklist</a>
                                 <a href="/avaliacoes">Minhas Avaliações</a>
-
-
-
+                                
                             </Menu>
                         </ul>
 
                         <a href="/"><img id="logo" src={LogoErgolist} alt="Logo do site Ergolist" title="Ergolist" /></a>
 
                         <ul id="parte2">
+                            <ThemeSwitch preserveRasters/>
                             <li><a href="/"> Sobre </a></li>
-
                             <li><a href="/"> Quem somos </a></li>
-
                             <Menu2 id="menu2" right customBurgerIcon={<img id='iconeperfil' alt='' src={IconePerfil} />}>
                                 <a href="/">Meu Perfil</a>
                                 <a href="/cadastrar">Cadastrar</a>

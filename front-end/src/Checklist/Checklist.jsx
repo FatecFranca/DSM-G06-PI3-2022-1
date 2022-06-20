@@ -42,6 +42,7 @@ export default class Checklist extends Component {
                             <div className="checklist_cartao">
                                 <div className="conteudo_cartCheck">
                                     {d.group}
+                                    <meter></meter>
                                 </div>
                             </div>
                         </Link>
@@ -58,4 +59,3 @@ export default class Checklist extends Component {
         )
     }
 }
-
