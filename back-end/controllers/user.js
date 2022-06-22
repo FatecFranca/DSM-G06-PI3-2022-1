@@ -20,9 +20,9 @@ controller.create = async (req, res) => {
             // passado para o model
             delete req.body.password
             
-            await User.create(req.body)
-            // HTTP 201: Created
-            res.status(201).end()
+            const result = await User.create(req.body)
+            const token = jwt.sign({id : result._id}, process.env.SECRET,
+                res.status(201).json({auth : true, token}))
         }
         else {
             res.status(400).send({error: 'Email já cadastrado'})

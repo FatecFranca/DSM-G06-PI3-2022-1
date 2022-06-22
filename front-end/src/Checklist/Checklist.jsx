@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Checklist.css'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import api from '../service/api';
 import Titulo from '../Titulos/Titulo';
 import { Component } from 'react';
@@ -11,34 +11,32 @@ const alterarProgresso = () => {
     progresso.setAttribute("style", "width: " /* concatenar valor do atributo */ + "%")
 }
 
-export default class Checklist extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            data: []
-        }
-    }
+export default function Checklist() {
 
-    getData() {
-        api.get("question-group/")
-            .then(res => {
-                var data = res.data
-                this.setState({ data: data })
+
+    const location = useLocation()    
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        console.log("frecth")
+        const fetchData = async () => {
+            await api.get("/question-group/")
+            .then((res) => {
+                console.log(res)
+                setData(res.data)
             })
-    }
-    componentDidMount() {
-        this.getData()
-    }
+            .catch(error => console.log(error))
+        };
+        fetchData()
+        console.log(location)
+    }, [])
 
-    render() {
-        console.log("data:")
-        console.log(this.state.data)
         return (
             <div id="checklist">
                 <Titulo texto='Checklist' />
                 <div id="checklist_cartoes">
-                    {this.state.data.map(d => (
-                        <Link key={d._id} className="link" to="/checklist/questoes" state={d._id}>
+                    {data && data.map(d => (
+                        <Link key={d._id} className="link" to="/checklist/questoes" state={{"questionGroupId" : d._id, "assessment_id" : location.state}}>
                             <div className="checklist_cartao">
                                 <div className="conteudo_cartCheck">
                                     {d.group}
@@ -57,5 +55,4 @@ export default class Checklist extends Component {
                 </div>
             </div>
         )
-    }
 }

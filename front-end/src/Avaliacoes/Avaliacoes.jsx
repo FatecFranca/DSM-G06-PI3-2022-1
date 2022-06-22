@@ -49,7 +49,7 @@ export default function Avaliacoes() {
 
     const GroupItem = ({ data }) => {
         return (
-            <Link key={data._id} className="link" to="/avaliacoes">
+            <Link key={data._id} className="link" to="/checklist" state={data._id}>
                 <div className="cartoes_avaliacoes">
 
                     <div className="conteudo_cartAvaliac">

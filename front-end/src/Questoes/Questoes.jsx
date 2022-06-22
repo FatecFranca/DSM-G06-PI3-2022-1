@@ -3,15 +3,37 @@ import api from '../service/api';
 import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import Questao from './Questao';
+
+
 
 export default function Questoes() {
     const location = useLocation()
     const [questions, setQuestions] = useState(null);
+    
+    const assessment_id = location.state.assessment_id
+
+
+    const [answers, setAnswers] = useState({})
+    const handleInputChange = (id, value, number) => {
+        setAnswers({...answers, [number] : {
+        ["objective_answer"] : value ,
+        ["question"] : id, 
+        ["assessment"] : assessment_id}})
+    }
+
+    const handleSubmit = async () => {
+        Object.entries(answers).map (item => {
+            api.post("/answer/", item[1])
+            .then(res => console.log(res))
+            .catch(error => console.log(error))
+        })
+    }
+
     useEffect(() => {
         const fetchData = async () => {
-            await api.get(`question/group/${location.state}`)
+            await api.get(`question/group/${location.state.questionGroupId}`)
                 .then(function (res) {
-                    console.log(res)
                     setQuestions(res)
                 })
                 .catch((e) => (console.log(e)))
@@ -19,9 +41,15 @@ export default function Questoes() {
         fetchData();
     }, [])
 
-    return (
-        <>
-            {questions && questions.data.map(d => (<p>{d.enunciation}</p>))}
-        </>
+
+
+    return(
+        <div>
+            {questions && questions.data.map(d => (<Questao props={d} onChange={handleInputChange}/>))}
+
+            <button onClick={handleSubmit}>Submit</button>
+            
+            <pre>{JSON.stringify(answers)}</pre>
+        </div>
     )
 }
