@@ -16,7 +16,7 @@
     "react-hamburger-menu": "^1.2.1",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
-    "react-theme-switch": "https://github.com/gabrielhenrique0/react-theme-switch/tarball/master",
+    "react-switch": "^7.0.0",
     "typeit-react": "^2.4.4",
     "web-vitals": "^2.1.4"
   },

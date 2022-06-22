@@ -67,3 +67,27 @@ footer {
 #conjunto {
     display: flex;
 }
+
+@media screen and (max-width: 640px) {
+    #conjunto .apresentacao {
+        margin-left: 0;
+        display: flex;
+        width: 350px;
+        flex-direction: column;
+        align-self: center;
+        padding: 0;
+    }
+    #conjunto {
+        flex-direction: column;
+        justify-content: center;
+    }
+    #redessociais {
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    #conjunto .apresentacao {
+        width: 250px;
+    }
+}
