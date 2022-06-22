@@ -9,46 +9,65 @@ import Adicionar from '../Images/icone_adicionar.png'
 
 export default function Avaliacoes() {
     const [avaliacoes, setAvaliacoes] = useState(null);
+    const [title, setTitle] = useState("")
+    const [description, setDescription] = useState("")
     useEffect(() => {
         // colocar o prefixo correto
         const fetchData = async () => {
             await api.get("/assessment/")
                 .then((res) => {
-                    console.log(localStorage.getItem('user.token'))
-                    console.log(res)
                     setAvaliacoes(res.data)
+                    console.log(res.data)
                 })
                 .catch((e) => { console.log(e); alert(e) })
         };
-        fetchData()
+        fetchData();
     }, []);
 
     const criarAvaliacao = () => {
         const postData = async () => {
             const result = await api.post("/assessment/", {
-                title: "Titulo teste",
-                description: "Descrição teste",
+                title: title,
+                description: description,
                 user: localStorage.getItem('user.token')
             })
-            console.log(result);
         }
         postData()
             .then((res) => {
-                console.log(res)
                 window.location.reload()
             })
     }
 
     const deletarAvaliacao = (id) => {
-        alert("here")
+        console.log(id)
         const deleteData = async () => {
-            await api.delete("/assessment/", { _id: id })
+            await api.delete("/assessment/", {data : {_id : id}})
+            .then(res => window.location.reload())
+            .catch(error => console.log(error))
         }
+        
         deleteData();
     }
 
+    const handleTitle = (e) => {
+        setTitle(e.target.value)
+    }
+    const handleDescription = (e) => {
+        setDescription(e.target.value)
+    }
+
     const GroupItem = ({ data }) => {
+        const date = new Date(data.datetime).toLocaleDateString(
+            'pt-br',
+            {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                timeZone: 'utc'
+            }
+        )
         return (
+            <div>
             <Link key={data._id} className="link" to="/checklist" state={data._id}>
                 <div className="cartoes_avaliacoes">
 
@@ -56,15 +75,14 @@ export default function Avaliacoes() {
 
                         {data.title}
                         <hr />
-                        <p>22/04/2024</p>
+                        <p>{date}</p>
                         <hr />
-                        <p>Dsjwjw wuhuyyuqw wygewyg.</p>
-                        <button id="botaolixeirinha"><img id="lixeirinha" src={Excluir} alt="" onSubmit={() => { deletarAvaliacao(data._id) }} /></button>
-
+                        <p>{data.description}</p>
                     </div>
-
                 </div>
             </Link>
+            <button id="botaolixeirinha"><img id="lixeirinha" src={Excluir} alt="" onClick={() => { deletarAvaliacao(data._id) }} /></button>
+            </div>
         )
     }
 
@@ -78,12 +96,15 @@ export default function Avaliacoes() {
             </div>
 
             <div id="novaavaliacao">
+                <input name="title" type="text" onChange={handleTitle} placeholder="Título"/>
+                <input name="description"type="text" onChange={handleDescription} placeholder="Descrição"/>
                 <button id="avalialink" onClick={criarAvaliacao}>
 
                     <div id="botao_adicionar">
                         <img id="adicionar" src={Adicionar} alt="" />
 
                         <p>Nova avaliação</p>
+                        
 
                     </div>
 
