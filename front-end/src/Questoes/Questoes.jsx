@@ -1,6 +1,6 @@
 import './Questoes.css'
 import api from '../service/api';
-import { useLocation } from 'react-router-dom';
+import {  useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Questao from './Questao';
@@ -10,6 +10,7 @@ import Questao from './Questao';
 export default function Questoes() {
     const location = useLocation()
     const [questions, setQuestions] = useState(null);
+    const navigate = useNavigate()
     
     const assessment_id = location.state.assessment_id
 
@@ -28,6 +29,7 @@ export default function Questoes() {
             .then(res => console.log(res))
             .catch(error => console.log(error))
         })
+        .then(navigate("/checklist", {state : assessment_id}))
     }
 
     useEffect(() => {

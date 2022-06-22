@@ -9,6 +9,7 @@ import Login from '../Entrar/Login';
 import Checklist from '../Checklist/Checklist';
 import Questoes from '../Questoes/Questoes';
 import Avaliacoes from '../Avaliacoes/Avaliacoes';
+import Resultado from '../Resultado/Resultado'
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
         <Route exact path="/checklist" element={<Checklist />}></Route>
         <Route exact path="/checklist/questoes" element={<Questoes />}></Route>
         <Route exact path="/avaliacoes" element={<Avaliacoes />}></Route>
+        <Route exact path="/resultado" element={<Resultado />}></Route>
       </Routes>
 
     </div>

@@ -14,15 +14,14 @@ const alterarProgresso = () => {
 export default function Checklist() {
 
 
+    // assessment_id é o location.state
     const location = useLocation()    
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        console.log("frecth")
         const fetchData = async () => {
             await api.get("/question-group/")
             .then((res) => {
-                console.log(res)
                 setData(res.data)
             })
             .catch(error => console.log(error))
@@ -50,7 +49,7 @@ export default function Checklist() {
                     <Link to="/">
                         <button id="salvar">Salvar</button>
                     </Link>
-                    <Link to="/"><button id="finalizar">Finalizar</button></Link>
+                    <Link to="/resultado" state={location.state}><button id="finalizar">Finalizar</button></Link>
 
                 </div>
             </div>

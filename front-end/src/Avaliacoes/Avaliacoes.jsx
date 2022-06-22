@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Avaliacoes.css'
 import { Link } from 'react-router-dom'
 import api from '../service/api';
-import data1 from './mock'
+
 import Titulo from '../Titulos/Titulo';
 import Excluir from '../Images/excluir.png'
 import Adicionar from '../Images/icone_adicionar.png'
@@ -26,7 +26,7 @@ export default function Avaliacoes() {
 
     const criarAvaliacao = () => {
         const postData = async () => {
-            const result = await api.post("/assessment/", {
+            await api.post("/assessment/", {
                 title: title,
                 description: description,
                 user: localStorage.getItem('user.token')
