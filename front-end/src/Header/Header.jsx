@@ -4,9 +4,7 @@ import { slide as Menu2 } from 'react-burger-menu'
 import IconePerfil from '../Images/icone_perfil.png'
 import LogoErgolist from '../Images/logo_ergolist.png'
 import './Header.css';
-import ThemeSwitch from 'react-theme-switch';
-import api from '../service/api';
-import { useNavigate } from 'react-router-dom';
+import ThemeSwitch from 'react-theme-switch/src/ThemeSwitch';
 
 export default function Header() {
     const navigate = useNavigate()
@@ -72,7 +70,7 @@ export default function Header() {
                         <a href="/"><img id="logo" src={LogoErgolist} alt="Logo do site Ergolist" title="Ergolist" /></a>
 
                         <ul id="parte2">
-                            <ThemeSwitch preserveRasters/>
+                            <ThemeSwitch />
                             <li><a href="/"> Sobre </a></li>
                             <li><a href="/"> Quem somos </a></li>
                             <Menu2 id="menu2" right customBurgerIcon={<img id='iconeperfil' alt='' src={IconePerfil} />}>
