@@ -9,6 +9,8 @@ import Login from '../Entrar/Login';
 import Checklist from '../Checklist/Checklist';
 import Questoes from '../Questoes/Questoes';
 import Avaliacoes from '../Avaliacoes/Avaliacoes';
+import ThemeSwitch from './ThemeSwitch.js';
+
 
 function App() {
 

@@ -3,6 +3,8 @@ import { stack as Menu } from 'react-burger-menu'
 import { slide as Menu2 } from 'react-burger-menu'
 import IconePerfil from '../Images/icone_perfil.png'
 import LogoErgolist from '../Images/logo_ergolist.png'
+import api from '../service/api';
+import { useNavigate } from 'react-router-dom';
 import './Header.css';
 import ThemeSwitch from 'react-theme-switch/src/ThemeSwitch';
 
