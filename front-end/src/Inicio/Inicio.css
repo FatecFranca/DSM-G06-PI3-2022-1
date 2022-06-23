@@ -45,6 +45,7 @@ footer {
     padding-right: 15px;
     margin-left: 60px;
     margin-top: 60px;
+    display: flex;
 }
 
 #redessociais {

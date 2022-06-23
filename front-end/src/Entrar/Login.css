@@ -65,6 +65,10 @@ label {
     text-align: center;
 }
 
+#botaoEntrar {
+    text-align: center;
+}
+
 @media screen and (max-width: 640px) {
     #cartao_login {
         width: 350px;

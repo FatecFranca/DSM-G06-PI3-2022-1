@@ -40,7 +40,7 @@ export default function Login() {
                         </div>
                         <div><label>Senha</label>
                             <input type="password" onChange={(value) => { setPassword(value.currentTarget.value) }}></input></div>
-                        <div><button type='submit'>Entrar</button></div>
+                        <div id="botaoEntrar"><button type='submit'>Entrar</button></div>
                         <div><Link id="cadastre" to="/cadastrar"><p>Cadastre-se</p></Link></div>
 
                     </form>
