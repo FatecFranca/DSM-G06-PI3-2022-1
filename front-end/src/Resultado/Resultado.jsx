@@ -19,30 +19,39 @@ const Resultado = () => {
         fetchData();
     }, [])
 
+    const Resposta = (data) => {
+        data = data.data
+        let resposta
+        switch(data.objective_answer){
+            case "Y":
+                resposta = "Sim"
+                break
+            case "N":
+                resposta = "Não"
+                break
+            case "X" :
+                resposta = "Não aplicável"
+                break
+            case "P" :
+                resposta = "Não respondida"
+                break
+        }
+        return(
+
+            <div>
+
+                <p>{data.number}{data.question.enunciation}</p>
+                <p>Resposta: {resposta}</p>
+                <p>Comentários : {data.comments}</p>
+            </div>
+        )
+    }
+
 
 
     return(
         <div>
-            <p>Sim : {resultado && resultado.filter(obj => {
-                if(obj.objective_answer === "Y") {
-                    return true;
-                }
-                return false;
-            }).length}</p>
-            <p>Não : {resultado && resultado.filter(obj => {
-                if(obj.objective_answer === "N"){
-                    return true;
-                }
-                return false;
-            }).length}</p>
-            <p>Não aplicável : {resultado && resultado.filter(obj => {
-                if(obj.objective_answer === "X"){
-                    return true;
-                }
-                return false;
-            }).length}</p>
-       
-            <pre>{JSON.stringify(resultado, null, 2)}</pre>
+            {resultado && resultado.map(data => (<Resposta data={data}/>))}
         </div>
     )
 }
