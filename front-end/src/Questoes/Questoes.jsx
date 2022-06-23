@@ -16,11 +16,13 @@ export default function Questoes() {
 
 
     const [answers, setAnswers] = useState({})
-    const handleInputChange = (id, value, number) => {
+    const handleInputChange = (id, value, number, comments) => {
         setAnswers({...answers, [number] : {
         ["objective_answer"] : value ,
         ["question"] : id, 
-        ["assessment"] : assessment_id}})
+        ["assessment"] : assessment_id,
+        ["comments"] : comments
+    }})
     }
 
     const handleSubmit = async () => {
@@ -49,7 +51,7 @@ export default function Questoes() {
         <div>
             {questions && questions.data.map(d => (<Questao props={d} onChange={handleInputChange}/>))}
 
-            <button onClick={handleSubmit}>Submit</button>
+            <button onClick={handleSubmit}>Salvar</button>
             
             <pre>{JSON.stringify(answers)}</pre>
         </div>
