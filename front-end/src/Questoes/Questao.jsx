@@ -26,11 +26,9 @@ const Questao = (props, onChange) => {
     
     return (
         <main className="container">
-        <div>
+        <div style={{width: '50%'}} className="question">
             <p>{props.number}-{props.enunciation}</p>
             <div className="answ_Y">
-            <hr></hr>
-            <label>Sim</label>
             <input 
             name={props.number}
             type="radio"
@@ -38,11 +36,10 @@ const Questao = (props, onChange) => {
             onChange={handleChange}
             checked={answer === "Y"}
             />
+            <label> - Sim</label>  
             </div>
 
             <div className="answ_N">
-            <hr></hr>
-            <label>Não</label>
             <input 
             name={props.number}
             type="radio"
@@ -50,11 +47,10 @@ const Questao = (props, onChange) => {
             onChange={handleChange}
             checked={answer === "N"}
             />
+            <label> - Não</label>
             </div>
 
             <div className="answ_X">
-            <hr></hr>
-            <label>Não aplicável</label>
             <input 
             name={props.number}
             type="radio"
@@ -62,11 +58,10 @@ const Questao = (props, onChange) => {
             onChange={handleChange}
             checked={answer === "X"}
             />
+            <label> - Não aplicável</label>  
             </div>
 
             <div className="answ_P">
-            <hr></hr>
-            <label>Pular</label>
             <input 
             name={props.number}
             type="radio"
@@ -74,12 +69,14 @@ const Questao = (props, onChange) => {
             onChange={handleChange}
             checked={answer === "P"}
             />
+            <label> - Pular</label>   
             </div>
 
             <div className="answ_coment">
-              <hr></hr>
+
               <label>Comentário</label>
               <textarea 
+              style={{marginLeft: '10px'}}
               id="quest_comment" 
               placeholder="" 
               type="text"

@@ -1,8 +1,30 @@
+#CartoesList {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    row-gap: 15px;
+    column-gap: 35px;
+    padding-bottom: 60px;
+}
+
 #avaliacoes {
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
     justify-content: center;
+}
+
+#itemAvaliacao {
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    width: 250px;
+    border-radius: 7px;
+    border: #000 solid;
+    border-width: 1.6px;
+    background-color: #fff;
 }
 
 .cartoes_avaliacoes {
@@ -89,6 +111,7 @@ hr {
     height: 40px;
     display: flex;
     align-items: center;
+    z-index: 1000;
 }
 
 #adicionar {

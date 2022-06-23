@@ -67,7 +67,7 @@ export default function Avaliacoes() {
             }
         )
         return (
-            <div>
+            <div id='itemAvaliacao'>
             <Link key={data._id} className="link" to="/checklist" state={data._id}>
                 <div className="cartoes_avaliacoes">
 
@@ -78,10 +78,12 @@ export default function Avaliacoes() {
                         <p>{date}</p>
                         <hr />
                         <p>{data.description}</p>
+                        
                     </div>
+                    
                 </div>
             </Link>
-            <button id="botaolixeirinha"><img id="lixeirinha" src={Excluir} alt="" onClick={() => { deletarAvaliacao(data._id) }} /></button>
+            <  button id="botaolixeirinha"><img id="lixeirinha" src={Excluir} alt="" onClick={() => { deletarAvaliacao(data._id) }} /></button>
             </div>
         )
     }
@@ -89,7 +91,7 @@ export default function Avaliacoes() {
     return (
         <div id="Checklist1">
             <Titulo texto="Avaliações" />
-            <div id="Cartoes4">
+            <div id="CartoesList">
                 {avaliacoes &&
                     avaliacoes.map((data) => <GroupItem data={data} />)
                 }
