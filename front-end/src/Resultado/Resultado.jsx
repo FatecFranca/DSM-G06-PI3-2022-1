@@ -21,6 +21,7 @@ const Resultado = () => {
 
     const Resposta = (data) => {
         data = data.data
+        console.log(data)
         let resposta
         switch(data.objective_answer){
             case "Y":
@@ -36,21 +37,47 @@ const Resultado = () => {
                 resposta = "Não respondida"
                 break
         }
-        return(
+        if(data.comments === "")
+        {
+            return(
 
-            <div>
+                <div>
+                    <p>{data.question.number} - {data.question.enunciation}</p>
+                    <p>Resposta: {resposta}</p>
+                </div>
+            ) 
+        }
+        else{
+            return(
 
-                <p>{data.number}{data.question.enunciation}</p>
-                <p>Resposta: {resposta}</p>
-                <p>Comentários : {data.comments}</p>
-            </div>
-        )
+                <div>
+                    <p>{data.question.number} - {data.question.enunciation}</p>
+                    <p>Resposta: {resposta}</p>
+                    <p>Comentários : {data.comments}</p>
+                </div>
+            )
+        }
     }
 
 
 
     return(
         <div>
+            <div>
+                <h3>Total</h3>
+                <p>Sim : {resultado.filter(obj => {
+                    if(obj.objective_answer === "Y") return true
+                    return false
+                }).length}</p>
+                <p>Não : {resultado.filter(obj => {
+                    if(obj.objective_answer === "N") return true
+                    return false
+                }).length}</p>
+                <p>Não aplicável : {resultado.filter(obj => {
+                    if(obj.objective_answer === "X") return true
+                    return false
+                }).length}</p>
+            </div>
             {resultado && resultado.map(data => (<Resposta data={data}/>))}
         </div>
     )
