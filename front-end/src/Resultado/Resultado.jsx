@@ -12,16 +12,38 @@ const Resultado = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            await api.get(`/answer/assessment/${location.state}`)
+            const asnwersResult = await api.get(`/answer/assessment/${location.state}`)
             .then(res => setResultado(res.data))
-            .catch(error => console.log(error))
+            .catch(error => console.log(resultado))
         }
         fetchData();
-        console.log(resultado)
     }, [])
 
+
+
     return(
-        <pre>{JSON.stringify(resultado, null, 2)}</pre>
+        <div>
+            <p>Sim : {resultado && resultado.filter(obj => {
+                if(obj.objective_answer === "Y") {
+                    return true;
+                }
+                return false;
+            }).length}</p>
+            <p>Não : {resultado && resultado.filter(obj => {
+                if(obj.objective_answer === "N"){
+                    return true;
+                }
+                return false;
+            }).length}</p>
+            <p>Não aplicável : {resultado && resultado.filter(obj => {
+                if(obj.objective_answer === "X"){
+                    return true;
+                }
+                return false;
+            }).length}</p>
+       
+            <pre>{JSON.stringify(resultado, null, 2)}</pre>
+        </div>
     )
 }
 

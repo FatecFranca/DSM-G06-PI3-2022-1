@@ -7,7 +7,7 @@ const Questao = (props, onChange) => {
     onChange = props.onChange
     props = props.props
 
-    const [answer, setAnswer] = useState("");
+    const [answer, setAnswer] = useState("P");
     const answer_id = props._id
 
 
