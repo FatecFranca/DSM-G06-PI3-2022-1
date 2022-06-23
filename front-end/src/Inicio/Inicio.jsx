@@ -29,7 +29,10 @@ export default function Inicio() {
             <footer>
 
                 <h3>Sobre</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus commodo eros ut est auctor pretium. Quisque volutpat blandit purus, vitae consequat est facilisis a. Mauris vulputate orci ultricies erat pretium iaculis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut interdum, arcu vel tincidunt vehicula, quam mi convallis sapien, id mattis eros purus sit amet tortor. Etiam non nibh dolor. Integer vel tincidunt tellus. Vestibulum sagittis nisl neque, in tempor lorem accumsan id. Morbi a gravida nunc. Maecenas porta luctus nisi et auctor. Sed porta auctor ipsum, interdum maximus mauris vehicula at.</p>
+                <p>Aplicando todo o conhecimento aprendido em aula, nós, do grupo 6 do PI pertencente ao 3º DSM, fizemos o
+                    Ergolist, uma ferramenta baseada nas Heurísticas de Nielsen com o intuito de ajudar desenvolvedores na criação de sites com uma interface mais intuitiva e funcional, uma vez que faltam ferramentas desse tipo no
+                    mercado.
+                </p>
 
             </footer>
         </div>

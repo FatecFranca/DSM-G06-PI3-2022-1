@@ -36,19 +36,18 @@ export default function Header() {
                             </Menu>
 
                         </ul>
-
                         <a href="/"><img id="logo" src={LogoErgolist} alt="Logo do site Ergolist" title="Ergolist" /></a>
 
                         <ul id="parte2">
 
-                            <div id="extras2">
-                                <ThemeSwitch />
 
+                            <ThemeSwitch />
+                            <div id="extras2">
                                 <li><a href="/"> Sobre </a></li>
                                 <li><a href="/"> Quem somos </a></li>
                             </div>
 
-                            <Menu2 id="menu2" right customBurgerIcon={<img id='iconeperfil' alt='' src={IconePerfil} />}>
+                            <Menu2 /*id="menu2"*/ right customBurgerIcon={<img id='iconeperfil' alt='' src={IconePerfil} />}>
                                 <a href="/cadastrar">Cadastrar</a>
                                 <a href="/entrar">Entrar</a>
                             </Menu2>

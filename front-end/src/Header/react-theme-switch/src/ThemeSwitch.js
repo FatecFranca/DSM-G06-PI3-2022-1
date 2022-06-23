@@ -2,17 +2,46 @@ import React, { Fragment, useRef, useEffect, useState } from 'react';
 
 const ThemeSwitch = ({ preserveRasters = true, storeKey = 'ThemeSwitch' }) => {
   const cssString = `
-        html { filter: invert(100%); background-color: #bbb}
+        html {background-color: #333}
         * { background-color: inherit }
-        .menu { background-color: #eee}
-        img { background-color: }
+        .menu { background-color: #51432C;
+        border-color: #222;
+        }
+        #iconeperfil, #redessociais {
+          filter: invert(100%);
+          background-color: transparent;
+        }
         .bm-menu {
-          background-color: #;
+          background-color: #0F1233;
         }
         .bm-item {
-          background-color: #2a90ab;
+          background-color: #0F1233;
+          border-color: #2E281C;
         }
-        #conteudo_cartCadas {background-color: #ccc;}
+        #conteudo_cartCadas, #conteudo_cartLogin {background-color: #bbb;}
+        .bm-burger-bars {
+          background-color: #eee;
+      }
+        .navMenu ul li a {
+          color: #eee;
+        }
+      
+        #menu2 .bm-menu {
+          background-color: transparent;
+        }
+        p, h3 {
+          color: #eee;
+        }
+        #ergolist {
+          color: #eee;
+        }
+        .bm-burger-bars-hover {
+          background-color: #557780;
+          transition: 0.5s;
+      }
+      img {
+        background-color: transparent;
+      }
       `;
 
   const isDeclarationSupported = (property, value) => {
@@ -59,7 +88,7 @@ const ThemeSwitch = ({ preserveRasters = true, storeKey = 'ThemeSwitch' }) => {
             {active ? css.trim() : css}
           </style>
         </label>
-
+        
       </Fragment>
     )
   );

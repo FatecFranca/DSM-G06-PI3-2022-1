@@ -66,3 +66,12 @@ button {
     color: #00f;
     transition: 1s;
 }
+
+@media screen and (max-width: 640px) {
+    #cartao_cadastrar {
+        width: 350px;
+    }
+    input {
+        width: 250px;
+    }
+}
